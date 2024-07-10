@@ -30,7 +30,7 @@ html, body {
     justify-content: center;
     align-items: center;
     /* border-radius: 15px; */
-    background-image: url('images/background.jpeg');
+    background-image: url('../images/background.jpeg');
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
@@ -130,7 +130,7 @@ button {
     height: 100px; 
     margin: 0% 2px; 
     border-radius: 15px;
-    background-image: url('images/botten.png'); /* 设置背景图片路径 */
+    background-image: url('../images/botten.png'); /* 设置背景图片路径 */
     background-size: 100% 150%; /* 图片尺寸适应按钮大小 */
     background-position: center;
     background-repeat: no-repeat; /*禁止背景图片重复*/

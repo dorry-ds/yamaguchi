@@ -11,3 +11,7 @@ document.querySelectorAll('.arrow').forEach(arrow => {
         alert('矢印がクリックされました');
     });
 });
+
+function myFunction() {
+    alert("Button clicked!");
+}

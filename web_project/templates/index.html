@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アプリケーションインターフェース</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/camera.js') }}"></script>
 </head>
 <body>
     <div class="container">
@@ -107,10 +109,13 @@
         <div id="pagekamera" class="page" style="display:none;">
             <div class="section">
                 <!-- <p class="font-title">カメラ</p> -->
-                <video id="video"  width=100% height=auto autoplay></video>
+                <video id="video"  width=60% height=auto autoplay></video>
                 <script src="camera.js"></script>
                 <div class="footer">
                     <button onclick="showPage('page1')">戻る</button>
+                    <form action="/button-clicked" method="post">
+                        <button type="submit">flask</button>
+                    </form>
                     <!-- <button onclick="showPage('page2')">使用状況</button> -->
                 </div>
             </div>
