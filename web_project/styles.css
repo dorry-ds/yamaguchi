@@ -1,0 +1,179 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column
+    /* justify-content: center;
+    margin-top: 100px; */
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+     /* 初始隐藏所有页面 */
+}
+
+
+.section {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 15px; */
+    background-image: url('images/background.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around; /* 确保按钮在底部水平分布 */
+    width: 50%;
+    padding: 2% 10px;
+    /* background-color: #aaa; */
+    /* gap: 10px */
+    /* margin: 20% 10%; */
+}
+
+.styled-text {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;  /* 设置字体 */
+    font-size: 20px;                   /* 设置字体大小 */
+    color: #00000097;                       /* 设置字体颜色 */
+    font-weight: bold;                 /* 设置字体粗细 */
+    text-shadow: 1px 1px 2px #aaa;     /* 设置文字阴影 */
+    letter-spacing: 1px;               /* 设置字母间距 */
+}
+
+.styled-text span {
+    margin-left: 15px;
+    margin-right: 15px; /* 去除span元素的边距 */
+}
+
+/* .section {
+    border: 1px solid #000;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-image: url('images/background.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    text-align: center;
+} */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.font-title {
+    padding: 10px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px #00000061;
+    color: #00000046;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in;
+}
+
+.font-dispy{
+    padding: 10px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 10px;
+    text-shadow: 2px 2px 4px #00000061;
+    color: #00000046;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in;
+
+}
+
+.list .item {
+    /* padding: 100px; */
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 30px;
+    margin-right: 0px;
+}
+
+.list2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px;
+    margin: 15px;
+}
+
+
+
+button {
+    width: 20%;
+    /* padding: 0 0px; */
+    height: 100px; 
+    margin: 0% 2px; 
+    border-radius: 15px;
+    background-image: url('images/botten.png'); /* 设置背景图片路径 */
+    background-size: 100% 150%; /* 图片尺寸适应按钮大小 */
+    background-position: center;
+    background-repeat: no-repeat; /*禁止背景图片重复*/
+    background-color: transparent; /* 清除背景颜色 */
+    border: none;
+    cursor: pointer; /* 鼠标指针样式设为手型 */
+    font-size: 15px; 
+    font-weight: 600;
+    text-shadow: 1px 1px 3px #fe8700db;
+    color: #00000088; 
+    text-align: center;
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    outline: none; /* 移除默认的焦点样式 */
+    /* transition: background-size 0.3s, background-color 0.3s; 添加过渡效果 */
+}
+
+button:hover {
+
+    background-size: 120% 180%; /* 增加背景图片的尺寸 */
+    font-size: 22px;
+    /* transform: translateY(3px); */
+    /* text-shadow: 1px 1px 3px #fe000000; */
+
+
+    
+}
+button2 {
+    background-color: rgb(255, 253, 127);
+    width: 100%;
+    background-position: center;
+    cursor: pointer; /* 鼠标指针样式设为手型 */
+    border-radius: 10px; /* 设置圆角 */
+    font-size: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    /* transition: background-size 0.3s, background-color 0.3s; 添加过渡效果 */
+
+}
+
+button2:hover{
+    /* background-size: 110% 110%;  */
+
+    font-size: 21px;
+
+}
