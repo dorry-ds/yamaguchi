@@ -14,30 +14,24 @@
                 <h2 class="font-title">アプリ</h2>
                 <div class="list">
                     <div class="item">
-                        <!-- <span class="styled-text">今日のおすすめ</span> -->
-                        <!-- <span class="arrow">▶</span> -->
                         <button2 onclick="showPage('pagessm')" class="styled-text">
                             <span>今日のおすすめ</span> 
                             <span>▶</span>
                         </button2>
                     </div>
                     <div class="item">
-                        <!-- <span class="styled-text">セットおすすめ</span> -->
                         <button2 onclick="showPage('pagesetssm')" class="styled-text">
                             <span>セットおすすめ</span>
                             <span>▶</span> 
                         </button2>
                     </div>
                     <div class="item">
-                        <!-- <span class="styled-text">おかず一覧</span> -->
                         <button2 onclick="showPage('pagesoks')" class="styled-text">
                             <span>おかず一覧</span> 
                             <span>▶</span>
                         </button2>
                     </div>
                     <div class="item">
-                        <!-- <span class="styled-text">カメラ</span> -->
-                        <!-- <span class="arrow">▶</span> -->
                         <button2 onclick="showPage('pagekamera')" class="styled-text">
                             <span>カメラ</span>
                             <span>▶</span>
@@ -56,7 +50,7 @@
                 <p class="font-title">使用状況</p>
                 <div class="list2">
                     <p class="font-dispy">合計人数</p>
-                    <p class="font-dispy">人数:〇人</p>
+                    <p id="person-count" class="font-dispy">人数:〇人</p>
                     <p class="font-dispy">テーブル使用状況</p>
                     <p class="font-dispy">〇席</p></div>
                 <div class="footer">
@@ -81,7 +75,6 @@
                 <p class="font-title">今日のおすすめ</p>
                 <div class="footer">
                     <button onclick="showPage('page1')">戻る</button>
-                    <!-- <button onclick="showPage('page2')">使用状況</button> -->
                 </div>
             </div>
         </div>
@@ -91,7 +84,6 @@
                 <p class="font-title">セットのおすすめ</p>
                 <div class="footer">
                     <button onclick="showPage('page1')">戻る</button>
-                    <!-- <button onclick="showPage('page2')">使用状況</button> -->
                 </div>
             </div>
         </div>
@@ -100,22 +92,44 @@
                 <p class="font-title">おかず一覧</p>
                 <div class="footer">
                     <button onclick="showPage('page1')">戻る</button>
-                    <!-- <button onclick="showPage('page2')">使用状況</button> -->
                 </div>
             </div>
         </div>
         <div id="pagekamera" class="page" style="display:none;">
             <div class="section">
-                <!-- <p class="font-title">カメラ</p> -->
                 <video id="video"  width=100% height=auto autoplay></video>
                 <script src="camera.js"></script>
                 <div class="footer">
                     <button onclick="showPage('page1')">戻る</button>
-                    <!-- <button onclick="showPage('page2')">使用状況</button> -->
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function showPage(pageId) {
+            // すべてのページを非表示にする
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.style.display = 'none';
+            });
+
+            // 指定したページを表示する
+            var pageToShow = document.getElementById(pageId);
+            if (pageToShow) {
+                pageToShow.style.display = 'block';
+            }
+        }
+
+        function updatePersonCount() {
+            fetch('/get_count')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('person-count').innerText = '人数: ' + data.count + '人';
+                });
+        }
+
+        // 定期的に人数を更新する
+        setInterval(updatePersonCount, 5000); // 5秒ごとに更新
+    </script>
 </body>
 </html>
