@@ -12,6 +12,12 @@ document.querySelectorAll('.arrow').forEach(arrow => {
     });
 });
 
-function myFunction() {
-    alert("Button clicked!");
-}
+function getVariable() {
+    axios.get('/get_variable')
+        .then(function (response) {
+            document.getElementById('variableValue').textContent = response.data.variable;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }

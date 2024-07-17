@@ -1,18 +1,20 @@
-const video = document.getElementById('video');
-
-// 检查浏览器是否支持getUserMedia API
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // 请求访问用户的摄像头
-    navigator.mediaDevices.getUserMedia({ video: true })
-    .then(function(stream) {
-        // 将视频流设置为视频元素的源
-        video.srcObject = stream;
-        video.play();
-    })
-    .catch(function(error) {
-        console.error("摄像头访问被拒绝或出现错误:", error);
-    });
-} else {
-    alert("您的浏览器不支持getUserMedia API");
+function startDetection() {
+    const videoContainer = document.getElementById('video-container');
+    videoContainer.innerHTML = '<img src="/detect" alt="Detection Video Stream">';
 }
 
+function cameraoff(){
+    fetch('/cameraoff', {
+        method: 'POST'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        // 可以在这里处理成功的响应
+        console.log('Camera turned off successfully');
+    })
+    .catch(error => {
+        console.error('There was a problem with the cameraoff request:', error);
+    });
+}
